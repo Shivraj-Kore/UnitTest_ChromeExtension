@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Input Filler</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="w-[400px]">
+    <div class="bg-[#24272A]  w-full">
+        <div class="w-full bg-slate-400 pb-2">
+            <h1 class="text-2xl font-bold text-center mb-2 text-white">Testing frontend</h1>
+            <p class="text-center mb-2 text-white">Fill the input fields for testing with random values</p>
+        </div>
+        <div class="bg-[#24272A] shadow-md p-2 w-full">
+        
+        <div id="inputOptions" class="text-[#ffffff] space-y-2">
+            <form action="#">        
+            <div class="space-y-2">
+                <!-- Text Input Options -->
+
+                <div class="col bg-[#343434] p-2 rounded-full" id="textSelect">
+                    <h1 class="flex items-center justify-center pb-2">Text</h1>
+                    <div id="textOptions" class="fieldsets gap-[20px] flex items-center justify-center">
+                        <div class="option bg-[#242424] hover:bg-[#444444] flex rounded-full p-2 gap-2" data-option="random" data-type="text">
+                            <h3>Random Input</h3>
+                        </div>
+                        <div class="option bg-[#242424] hover:bg-[#444444] flex rounded-full p-2 gap-2" data-option="fixed" data-type="text">
+                            <h3>Fixed Input</h3>
+                        </div>
+                        <div class="option bg-[#242424] hover:bg-[#444444] flex rounded-full p-2 gap-2" data-option="range" data-type="text">
+                            <h3>Ranged Input</h3>
+                        </div>
+                    </div>
+
+                    <!-- Additional input fields, hidden initially -->
+                    <div class="flex items-center justify-center mt-2">
+                        <div id="textRangedOptions" class="ranged-inp bg-[#242424] hover:bg-[#444444] hidden rounded-full p-2 gap-2">
+                            <h1>Number of letters: </h1>
+                            <input type="number" id="textRangedNum" class="bg-slate-400 rounded-full">
+                        </div>
+                        <div id="textFixedOptions" class="fixed-inp bg-[#242424] hover:bg-[#444444] hidden rounded-full p-2 gap-2">
+                            <h1>Give Input: </h1>
+                            <input type="text" id="textFixedInput" class="bg-slate-400 rounded-full">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Password Input Options -->
+                <div class="col bg-[#343434] p-2 rounded-full" id="passSelect">
+                    <h1 class="flex items-center justify-center pb-2">Password</h1>
+                    <div id="passOptions" class="fieldsets gap-[20px] flex items-center justify-center">
+                        <div class="option bg-[#242424] hover:bg-[#444444] flex rounded-full p-2 gap-2" data-option="random" data-type="pass">
+                            <h3>Random Input</h3>
+                        </div>
+                        <div class="option bg-[#242424] hover:bg-[#444444] flex rounded-full p-2 gap-2" data-option="fixed" data-type="pass">
+                            <h3>Fixed Input</h3>
+                        </div>
+                        <div class="option bg-[#242424] hover:bg-[#444444] flex rounded-full p-2 gap-2" data-option="range" data-type="pass">
+                            <h3>Ranged Input</h3>
+                        </div>
+                    </div>
+
+                    <!-- Additional input fields for Password, hidden initially -->
+                    <div class="flex items-center justify-center mt-2">
+                        <div id="passRangedOptions" class="ranged-inp bg-[#242424] hover:bg-[#444444] hidden rounded-full p-2 gap-2">
+                            <h1>Number of characters: </h1>
+                            <input type="number" id="passRangedNum" class="bg-slate-400 rounded-full">
+                        </div>
+                        <div id="passFixedOptions" class="fixed-inp bg-[#242424] hover:bg-[#444444] hidden rounded-full p-2 gap-2">
+                            <h1>Give Password: </h1>
+                            <input type="text" id="passFixedInput" class="bg-slate-400 rounded-full">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col bg-[#343434] p-2 rounded-full" id="dateSelect">
+                    <h1 class="flex items-center justify-center pb-2">Date</h1>
+                    <div id="dateOptions" class="fieldsets gap-[20px] flex items-center justify-center">
+                        <div class="option bg-[#242424] hover:bg-[#444444] flex rounded-full p-2 gap-2" data-option="random" data-type="date">
+                            <h3>Random Date</h3>
+                        </div>
+                        <div class="option bg-[#242424] hover:bg-[#444444] flex rounded-full p-2 gap-2" data-option="fixed" data-type="date">
+                            <h3>Fixed Date</h3>
+                        </div>
+                        <div class="option bg-[#242424] hover:bg-[#444444] flex rounded-full p-2 gap-2" data-option="range" data-type="date">
+                            <h3>Ranged Date</h3>
+                        </div>
+                    </div>
+                
+                    <!-- Additional input fields for Date, hidden initially -->
+                    <div class="flex items-center justify-center mt-2">
+                        <!-- Ranged Date Selection -->
+                        <div id="dateRangedOptions" class="ranged-inp bg-[#242424] hover:bg-[#444444] hidden rounded-full p-2 gap-2">
+                            <h1>Start Date: </h1>
+                            <input type="date" id="dateStart" class="bg-slate-400 rounded-full">
+                            <h1>End Date: </h1>
+                            <input type="date" id="dateEnd" class="bg-slate-400 rounded-full">
+                        </div>
+                        <!-- Fixed Date Input -->
+                        <div id="dateFixedOptions" class="fixed-inp bg-[#242424] hover:bg-[#444444] hidden rounded-full p-2 gap-2">
+                            <h1>Choose Date: </h1>
+                            <input type="date" id="dateFixedInput" class="bg-slate-400 rounded-full">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col bg-[#343434] p-2 rounded-full" id="timeSelect">
+                    <h1 class="flex items-center justify-center pb-2">Time</h1>
+                    <div id="timeOptions" class="fieldsets gap-[20px] flex items-center justify-center">
+                        <div class="option bg-[#242424] hover:bg-[#444444] flex rounded-full p-2 gap-2" data-option="random" data-type="time">
+                            <h3>Random Time</h3>
+                        </div>
+                        <div class="option bg-[#242424] hover:bg-[#444444] flex rounded-full p-2 gap-2" data-option="fixed" data-type="time">
+                            <h3>Fixed Time</h3>
+                        </div>
+                        <div class="option bg-[#242424] hover:bg-[#444444] flex rounded-full p-2 gap-2" data-option="range" data-type="time">
+                            <h3>Ranged Time</h3>
+                        </div>
+                    </div>
+                
+                    <!-- Additional input fields for Time, hidden initially -->
+                    <div class="flex items-center justify-center mt-2">
+                        <!-- Ranged Time Selection -->
+                        <div id="timeRangedOptions" class="ranged-inp bg-[#242424] hover:bg-[#444444] hidden rounded-full p-2 gap-2">
+                            <h1>Start Time: </h1>
+                            <input type="time" id="timeStart" class="bg-slate-400 rounded-full">
+                            <h1>End Time: </h1>
+                            <input type="time" id="timeEnd" class="bg-slate-400 rounded-full">
+                        </div>
+                        <!-- Fixed Time Input -->
+                        <div id="timeFixedOptions" class="fixed-inp bg-[#242424] hover:bg-[#444444] hidden rounded-full p-2 gap-2">
+                            <h1>Choose Time: </h1>
+                            <input type="time" id="timeFixedInput" class="bg-slate-400 rounded-full">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col bg-[#343434] p-2 rounded-full" id="emailSelect">
+                    <h1 class="flex items-center justify-center pb-2">Email</h1>
+                    <div id="emailOptions" class="fieldsets gap-[20px] flex items-center justify-center">
+                        <div class="option bg-[#242424] hover:bg-[#444444] flex rounded-full p-2 gap-2" data-option="random" data-type="email">
+                            <h3>Random Email</h3>
+                        </div>
+                        <div class="option bg-[#242424] hover:bg-[#444444] flex rounded-full p-2 gap-2" data-option="fixed" data-type="email">
+                            <h3>Fixed Email</h3>
+                        </div>
+                    </div>
+                
+                    <!-- Additional input fields for Email, hidden initially -->
+                    <div class="flex items-center justify-center mt-2">
+                        <!-- Fixed Email Input -->
+                        <div id="emailFixedOptions" class="fixed-inp bg-[#242424] hover:bg-[#444444] hidden rounded-full p-2 gap-2">
+                            <h1>Enter Email: </h1>
+                            <input type="email" id="emailFixedInput" class="bg-slate-400 rounded-full">
+                        </div>
+                    </div>
+                </div>                
+                
+            </div>
+        </div>
+        
+        <div class="flex justify-center">
+            <button id="fillInputsBtn" class="bg-[#1e35cb] hover:bg-blue-700 text-white font-bold mt-2 py-2 px-4 rounded-full" type="submit">
+                Fill Inputs
+            </button>
+        </div>
+        
+        <div id="statusMessage" class="text-center text-green-500 mt-4 hidden">
+            Input fields filled successfully!
+        </div>
+        </form>
+    </div>
+    </div>
+
+    <script src="popup.js"></script>
+    <script src="selecting.js"></script>
+</body>
+</html>
